@@ -18,7 +18,7 @@
 		"@playwright/test": "^1.48.2",
 		"@sveltejs/adapter-auto": "^3.3.1",
 		"@sveltejs/adapter-cloudflare": "^4.7.4",
-		"@sveltejs/adapter-vercel": "^5.4.6",
+		"@sveltejs/adapter-vercel": "^5.4.7",
 		"@sveltejs/kit": "^2.7.4",
 		"@sveltejs/vite-plugin-svelte": "^3.1.2",
 		"@types/diff-match-patch": "^1.0.36",
