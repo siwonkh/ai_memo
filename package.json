@@ -44,6 +44,8 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@capacitor/cli": "^6.1.2",
+		"@capacitor/core": "^6.1.2",
 		"@popperjs/core": "^2.11.8",
 		"@sveltejs/adapter-node": "^5.2.9",
 		"@sveltejs/adapter-static": "^3.0.6",
