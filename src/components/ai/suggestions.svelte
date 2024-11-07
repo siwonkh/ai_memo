@@ -1,5 +1,4 @@
 <script lang="ts">
-import SuggestionItem from '@components/ai/suggestion-item.svelte';
 import { createEventDispatcher } from 'svelte';
 
 export let suggestions: Suggestion[] = []
@@ -7,7 +6,6 @@ export let suggestions: Suggestion[] = []
 const dispatch = createEventDispatcher();
 
 function handleSuggest(suggestion: Suggestion) {
-	console.log('dispatch')
 	dispatch('suggest', { text: suggestion.text });
 }
 </script>
@@ -16,7 +14,7 @@ function handleSuggest(suggestion: Suggestion) {
 	<h5 class="text-white font-bold">추천</h5>
 	<div class="flex flex-col space-y-3 overflow-y-scroll">
 	{#each suggestions as suggestion}
-		<SuggestionItem on:click={() => {handleSuggest(suggestion)}} text={suggestion.text} />
+		<button on:click={() => {handleSuggest(suggestion)}} class="text-xs p-2 py-3 rounded-full border-1 border-stone-500 bg-white text-black">{suggestion.text}</button>
 	{/each}
 	</div>
 {:else}

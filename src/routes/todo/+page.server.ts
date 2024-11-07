@@ -8,10 +8,10 @@ export const load: PageServerLoad = (async ({
 	const user = serverAuth?.currentUser;
 
 	if (!user) {
-		throw redirect(300, '/');
+		throw redirect(302, '/');
 	}
 
 	return {
-		memos: await getTodos(serverDB)
+		todos: await getTodos(serverDB)
 	};
 }) satisfies PageServerLoad;

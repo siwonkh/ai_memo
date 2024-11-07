@@ -13,7 +13,7 @@ export const load: PageServerLoad = (async ({
 	const memoId = params.id;
 
 	if (!user) {
-		throw redirect(300, '/');
+		throw redirect(302, '/');
 	}
 
 	if (memoId === "new") {

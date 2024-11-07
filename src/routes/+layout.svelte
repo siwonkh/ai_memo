@@ -3,7 +3,7 @@
 	import '../app.css';
 </script>
 
-<body class="bg-stone-100 ">
+<div class="bg-stone-100 ">
 <Firebase />
 
 <slot />
@@ -11,4 +11,4 @@
 <!--	<a href="/">Home</a>-->
 <!--	<a data-sveltekit-preload-data="false" href="/about">About</a>-->
 <!--</nav>-->
-</body>
+</div>

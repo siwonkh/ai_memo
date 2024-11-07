@@ -1,13 +1,9 @@
-<script>
+<script lang="ts">
 import Todos from '@components/todo/todos.svelte';
-import { useAuth } from '$lib/use-user';
+import type { PageData } from './$types';
 
-const { logout } = useAuth();
+export let data: PageData;
+
 </script>
 
-<!--<button-->
-<!--	class="border bg-blue-600 text-white w-fit p-3 rounded-lg font-semibold"-->
-<!--	on:click={logout}>Logout</button-->
-<!--&gt;-->
-<hr />
-<Todos />
+<Todos todosExp={data.todos} />

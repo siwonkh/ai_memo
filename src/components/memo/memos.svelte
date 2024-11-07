@@ -1,11 +1,10 @@
 <script lang="ts">
-	import { useMemos, useAddMemo } from '$lib/use-memos';
+	import { useMemos } from '$lib/use-memos';
 	import MemoItem from '@components/memo/memo-item.svelte';
 	import { goto } from '$app/navigation';
 	import { derived, writable } from 'svelte/store';
 	import { useAuth } from '$lib/use-user';
 	import { fly, fade } from 'svelte/transition'
-	import { onDestroy } from 'svelte';
 
 	const { logout } = useAuth();
 
@@ -61,12 +60,12 @@
 	});
 
 	const addNewMemo = () => {
-		goto(`/memo/new`);
+		setTimeout(() => goto(`/memo/new`), 0);
 	};
 
 	const logoutRedirect = async () => {
 		await logout();
-		await goto("/")
+		setTimeout(() => goto("/"), 0);
 	}
 </script>
 

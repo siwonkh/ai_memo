@@ -1,5 +1,5 @@
 import type { PageServerLoad } from './$types';
-import { error, redirect } from '@sveltejs/kit';
+import { redirect } from '@sveltejs/kit';
 import { getMemos } from '$lib/memo';
 
 export const load: PageServerLoad = (async ({
@@ -8,7 +8,7 @@ export const load: PageServerLoad = (async ({
 	const user = serverAuth?.currentUser;
 
 	if (!user) {
-		throw redirect(300, '/');
+		throw redirect(302, '/');
 	}
 
 	return {

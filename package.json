@@ -45,6 +45,8 @@
 	"type": "module",
 	"dependencies": {
 		"@popperjs/core": "^2.11.8",
+		"@sveltejs/adapter-node": "^5.2.9",
+		"@sveltejs/adapter-static": "^3.0.6",
 		"diff-match-patch": "^1.0.5",
 		"flowbite": "^2.5.2",
 		"flowbite-svelte": "^0.47.3",

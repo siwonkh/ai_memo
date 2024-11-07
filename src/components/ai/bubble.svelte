@@ -1,4 +1,6 @@
 <script>
+	import {Spinner} from "flowbite-svelte";
+
 	export let content;
 	export let role;
 </script>
@@ -8,6 +10,9 @@
 <!--</div>-->
 <div class={`bubble ${role === 'user' ? 'user' : 'ai'}`}>
 	{content}
+	{#if role === 'loading'}
+		<Spinner size={4} color="gray" />
+	{/if}
 </div>
 
 <style>

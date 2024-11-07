@@ -33,6 +33,14 @@ declare global {
 	type Suggestion = {
 		text: string;
 	};
+
+	type Recommendation = {
+		toolName: string;
+		description: string;
+		functions: string;
+		website: string;
+		whyRecommend: string;
+	}
 	
 	namespace App {
 		// interface Error {}

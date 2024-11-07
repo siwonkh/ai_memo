@@ -5,10 +5,11 @@
 	import { getSuggestions } from '$lib/suggestion';
 	import { useAddMemo, useUpdateMemo, useDeleteMemo } from '$lib/use-memos';
 	import Conversation from '@components/ai/conversation.svelte';
+	import Bubble from '@components/ai/bubble.svelte';
 	import Suggestions from '@components/ai/suggestions.svelte';
 	import { Modal } from 'flowbite-svelte';
 	import { Dropdown, DropdownItem, DropdownDivider } from 'flowbite-svelte';
-	import { DotsVerticalOutline, PaperPlaneOutline, TrashBinOutline, UndoOutline, RedoOutline, ReplyOutline } from 'flowbite-svelte-icons';
+	import { DotsVerticalOutline, PaperPlaneOutline, TrashBinOutline, UndoOutline } from 'flowbite-svelte-icons';
 	import DiffMatchPatch from 'diff-match-patch';
 
 	const { addMemo } = useAddMemo();
@@ -76,6 +77,7 @@
 	async function handleSend() {
 		const userInput = promptInput.trim();
 		if (userInput != '') {
+			loading = true;
 			promptInput = "";
 			addMessage('user', userInput);
 			try {
@@ -108,6 +110,7 @@
 				// Consider implementing your own error handling logic here
 				console.error(error);
 			}
+			loading = false;
 		}
 	}
 
@@ -130,10 +133,10 @@
 	}
 
 	function onInputChange(event: any) {
-		const textarea = event.target;
-		if (textarea.scrollHeight > textarea.clientHeight) {
-			textarea.style.height = `${textarea.scrollHeight}px`;
-		}
+		// const textarea = event.target;
+		// if (textarea.scrollHeight > textarea.clientHeight) {
+		// 	textarea.style.height = `${textarea.scrollHeight}px`;
+		// }
 		if (textHistory.length < 1) {
 			textHistory.push(memo.text);
 		}
@@ -153,17 +156,19 @@
 	});
 
 	const saveAndExit = () => {
-		goto("/memo");
+		setTimeout(() => goto("/memo"), 0);
+
 	};
 
 	function remove() {
 		if (memoId === "new") {
 			memo.title = "";
 			memo.text = "";
-			goto("/memo");
+			setTimeout(() => goto("/memo"), 0);
 		} else {
 			deleteMemo(memoId);
-			goto("/memo")
+			setTimeout(() => goto("/memo"), 0);
+
 		}
 	}
 
@@ -188,9 +193,9 @@
 
 </script>
 
-<div class="p-4 pb-0 min-h-screen bg-white">
-	<div class="flex justify-between items-center">
-		<button on:click={saveAndExit} class="p-1 text-stone-500">← Memo</button>
+<div class="fixed w-full flex flex-col p-4 pb-0 min-h-screen h-screen bg-white">
+	<div class="relative flex justify-between items-center">
+		<button on:click={saveAndExit} class="p-1 text-stone-500">← Home</button>
 		<div class="flex space-x-6">
 			<button on:click={openModal} class="ai-button w-7 h-7 p-1 block rounded-full text-sm font-bold shadow-lg transition-all duration-200 ease-in-out" type="button">
 				AI
@@ -227,38 +232,43 @@
 		</div>
 	</div>
 
-	<textarea
-		bind:value={memo.title}
-		on:input={onInputChange}
-		placeholder="제목을 입력하세요..."
-		class="w-full overflow-hidden h-12 text-2xl font-bold border-0 p-2 py-4 focus:ring-0 focus:outline-none resize-none"
-	/>
-	{#if showHighlight}
-		<div
-			class="p-2 text-lg font-medium"
-			bind:innerHTML={highlightedContent}
-			contenteditable="true"
-		></div>
-	{:else}
-	<textarea
-		bind:value={memo.text}
-		on:input={onInputChange}
-		placeholder="메모를 입력하세요..."
-		class="w-full overflow-hidden h-screen text-lg font-medium p-2 pb-6 mb-6 border-0 focus:ring-0 focus:outline-none resize-none"
-	/>
+	<div class="relative flex flex-col min-h-screen w-full">
+		<input
+				bind:value={memo.title}
+				on:input={onInputChange}
+				placeholder="제목을 입력하세요..."
+				class="w-full text-2xl font-bold border-0 p-2 px-1 pt-6 focus:ring-0 focus:outline-none"
+		/>
+		{#if showHighlight}
+			<div class="p-2 text-lg font-medium"
+				bind:innerHTML={highlightedContent}
+				contenteditable="true"
+			></div>
+		{:else}
+		<textarea
+			bind:value={memo.text}
+			on:input={onInputChange}
+			placeholder="메모를 입력하세요..."
+			class="w-full h-full text-lg font-medium p-2 px-1 pb-32 border-0 focus:ring-0 focus:outline-none resize-none"
+		/>
 	{/if}
-
+	</div>
 	<Modal dismissable={false} bind:open={popupModal} class="w-full bg-transparent shadow-none h-full flex flex-col justify-center items-center" size="xs" outsideclose>
 		<div class="w-screen h-72 text-center space-y-3">
 			<div class="h-10 flex bg-white mx-2 px-2 rounded">
 				<label for="prompt"></label>
-				<input bind:value={promptInput} id="prompt" name="prompt" type="text" class="py-3 px-5 text-sm w-full border-0 focus:ring-0" placeholder="AI에게 작업을 요청해보세요." />
+				<input bind:value={promptInput} id="prompt" name="prompt" type="text" class="py-3 px-5 text-gray-900 text-sm w-full border-0 focus:ring-0" placeholder="AI에게 작업을 요청해보세요." />
 				<button on:click={handleSend}><PaperPlaneOutline class={`w-7 h-7 rounded p-1 text-white ${promptInput.trim() ? 'bg-stone-800' : 'bg-stone-200'}`}></PaperPlaneOutline></button>
 			</div>
 			<!-- Modal body -->
 			<div class="w-full px-2 md:px-1 text-center overflow-y-scroll">
 				{#if conversation.length}
-					<Conversation {conversation} />
+					<div class="flex flex-col gap-2">
+						{#if loading}
+							<Bubble content="" role="loading"></Bubble>
+						{/if}
+						<Conversation {conversation} />
+					</div>
 				{:else}
 					<Suggestions on:suggest={handleSuggest} {suggestions} />
 				{/if}
@@ -266,6 +276,7 @@
 		</div>
 	</Modal>
 </div>
+
 
 <style>
     .ai-button {
@@ -279,9 +290,17 @@
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
     }
 
-    /* 클릭 효과 */
     .ai-button:active {
         transform: scale(0.95);
         box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
     }
+
+	@keyframes pulse {
+		0%, 100% {
+			transform: scale(1);
+		}
+		50% {
+			transform: scale(1.1);
+		}
+	}
 </style>
