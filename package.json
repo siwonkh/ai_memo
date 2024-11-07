@@ -1,6 +1,6 @@
 {
-	"name": "sveltekit-firebase-deploy",
-	"version": "0.0.1",
+	"name": "ai-memo",
+	"version": "1.0.0",
 	"private": true,
 	"scripts": {
 		"dev": "vite dev",
