@@ -1,11 +1,18 @@
 import {
 	collection,
 	getDocs,
-	type Firestore
+	type Firestore, query, where, orderBy
 } from "firebase/firestore/lite";
+import type { User } from "firebase/auth";
 
-export const getTodos = async (serverDB: Firestore) => {
-	const todosSnap = await getDocs(collection(serverDB, '/todos'));
+export const getTodos = async (serverDB: Firestore, user: User) => {
+	const todosSnap = await getDocs(
+		query(
+			collection(serverDB, '/todos'),
+			where('uid', '==', user.uid),
+			orderBy('createdAt')
+		)
+	);
 
 	if (todosSnap.empty) {
 		return [];

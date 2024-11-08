@@ -12,6 +12,6 @@ export const load: PageServerLoad = (async ({
 	}
 
 	return {
-		todos: await getTodos(serverDB)
+		todos: await getTodos(serverDB, user)
 	};
 }) satisfies PageServerLoad;
