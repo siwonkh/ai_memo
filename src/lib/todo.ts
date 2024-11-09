@@ -8,7 +8,7 @@ import type { User } from "firebase/auth";
 export const getTodos = async (serverDB: Firestore, user: User) => {
 	const todosSnap = await getDocs(
 		query(
-			collection(serverDB, '/todos'),
+			collection(serverDB, 'todos'),
 			where('uid', '==', user.uid),
 			orderBy('createdAt')
 		)
