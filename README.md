@@ -1,6 +1,12 @@
 <h1 align="center">Team.SWG - Ai-Memo</h1>
+
 <p align="center">
   <img width="200" alt="image" src="https://github.com/user-attachments/assets/6bca11f0-c958-4eda-8deb-318d4f034d58">
+</p>
+<p align="center">
+  <img alt="svelte" src="https://img.shields.io/badge/Svelte-FF3E00?style=for-the-badge&logo=svelte&logoColor=white">
+  <img alt="typescript" src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white">
+  <img alt="tailwindcss" src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white">
 </p>
 <p align="center">
   <em>AI 접근성 향상을 통한 디지털 격차 완화</em>
