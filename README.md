@@ -1,7 +1,7 @@
 <h1 align="center">Team.SWG - Ai Memo</h1>
 <p align="center">
-  <img alt="svelte" src="https://img.shields.io/badge/Svelte-FF3E00?style=for-the-badge&logo=svelte&logoColor=white">
-  <img alt="typescript" src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white">
+  <img alt="svelte" src="https://img.shields.io/badge/Sveltejs-FF3E00?style=for-the-badge&logo=svelte&logoColor=white">
+  <img alt="firebase" src="https://img.shields.io/badge/firebase-ffca28?style=for-the-badge&logo=firebase&logoColor=black">
 </p>
 
 <p align="center">
@@ -28,6 +28,28 @@
 <img width="200" alt="image" src="https://github.com/user-attachments/assets/a1c9ffb1-728d-4b60-90b1-1e11be1e531c">
 <img width="200" alt="image" src="https://github.com/user-attachments/assets/8af1a97d-e9a2-4ba2-bab3-ac489bea813f">
 <img width="200" alt="image" src="https://github.com/user-attachments/assets/fcac7b1b-5f73-40b1-a3ca-d110088a23be">
+
+## 프로젝트 실행
+요구사항: 
+- Nodejs 설치 (20.x 이상 권장)
+- Firebase 설정
+  - 구글 Authentication 추가
+  - Authentication 허용 도메인 추가 (localhost외의 도메인 사용시)
+  - Firestore database 생성
+  - Firestore에 'suggestions' 컬렉션 추가 (나머지 컬렉션은 자동생성됨)
+  - (선택) 'suggestions' 컬렉션에 문서 추가 (문서 형식 예시 {text: "맞춤법 검사해줘"})
+- OpenAI API 키 발급
+- 루트 디렉토리에 .env 추가 (.env.example 참고)
+
+패키지 설치
+```shell
+npm install
+```
+
+실행
+```shell
+npm run dev
+```
 
 <br/><br/><br/><br/>
 2024 Handong Software Festival - Freshmen Software Competition
