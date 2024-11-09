@@ -27,3 +27,6 @@
 <img width="200" alt="image" src="https://github.com/user-attachments/assets/a1c9ffb1-728d-4b60-90b1-1e11be1e531c">
 <img width="200" alt="image" src="https://github.com/user-attachments/assets/8af1a97d-e9a2-4ba2-bab3-ac489bea813f">
 <img width="200" alt="image" src="https://github.com/user-attachments/assets/fcac7b1b-5f73-40b1-a3ca-d110088a23be">
+
+<br/><br/><br/><br/>
+2024 Handong Software Festival - Freshmen Software Competition
