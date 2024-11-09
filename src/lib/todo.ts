@@ -5,7 +5,7 @@ import {
 	query,
 	where,
 	type Firestore
-} from "firebase/firestore";
+} from "firebase/firestore/lite";
 import type { User } from "firebase/auth";
 
 export const getTodos = async (serverDB: Firestore, user: User) => {
