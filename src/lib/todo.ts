@@ -1,7 +1,10 @@
 import {
 	collection,
 	getDocs,
-	type Firestore, query, where, orderBy
+	orderBy,
+	query,
+	where,
+	type Firestore
 } from "firebase/firestore/lite";
 import type { User } from "firebase/auth";
 
@@ -10,7 +13,7 @@ export const getTodos = async (serverDB: Firestore, user: User) => {
 		query(
 			collection(serverDB, 'todos'),
 			where('uid', '==', user.uid),
-			orderBy('createdAt')
+			orderBy('createdAt', 'desc')
 		)
 	);
 
