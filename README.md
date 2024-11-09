@@ -1,18 +1,23 @@
-# ai-memo
+<h1 align="center">Team.SWG - Ai-Memo</h1>
+<p align="center">
+  <img width="200" alt="image" src="https://github.com/user-attachments/assets/6bca11f0-c958-4eda-8deb-318d4f034d58">
+</p>
+<p align="center">
+  <em>AI 접근성 향상을 통한 디지털 격차 완화</em>
+</p>
 
-<img width="332" alt="image" src="https://github.com/user-attachments/assets/e091a082-0fe6-48e3-ba4b-bc376ed9bf50">
+<br/><br/>
 
-<img width="331" alt="image" src="https://github.com/user-attachments/assets/a2a5db4e-f1f0-4ca6-bf3b-de4b0135bc4f">
+## TODO 기능
+<img width="200" alt="image" src="https://github.com/user-attachments/assets/5c27e1c2-6767-4d89-96e1-b8e1fbc2762f">
+<img width="200" alt="image" src="https://github.com/user-attachments/assets/f2bd219a-2618-442b-8a61-6ca65ec4b366">
+<img width="200" alt="image" src="https://github.com/user-attachments/assets/60ca7382-48d7-44fe-850f-2956f8199018">
+<img width="200" alt="image" src="https://github.com/user-attachments/assets/fd2bded8-a50b-4eba-8781-ccc388bebeb2">
 
-<img width="331" alt="image" src="https://github.com/user-attachments/assets/5c27e1c2-6767-4d89-96e1-b8e1fbc2762f">
 
-<img width="332" alt="image" src="https://github.com/user-attachments/assets/f2bd219a-2618-442b-8a61-6ca65ec4b366">
-
-<img width="331" alt="image" src="https://github.com/user-attachments/assets/f546aafb-afee-4594-8d5c-21d678ea049f">
-
-<img width="331" alt="image" src="https://github.com/user-attachments/assets/d3e07393-0b87-4206-976a-821ca518de0c">
-
-<img width="332" alt="image" src="https://github.com/user-attachments/assets/0fafdf5d-e7dc-42d8-95df-7a87f451fcba">
-
-<img width="330" alt="image" src="https://github.com/user-attachments/assets/07f57c91-0878-42f8-b497-cbde075bc549">
-
+## MEMO 기능
+<img width="200" alt="image" src="https://github.com/user-attachments/assets/a2a5db4e-f1f0-4ca6-bf3b-de4b0135bc4f">
+<img width="200" alt="image" src="https://github.com/user-attachments/assets/de94abad-b274-485e-8de7-c62a322c25eb">
+<img width="200" alt="image" src="https://github.com/user-attachments/assets/a1c9ffb1-728d-4b60-90b1-1e11be1e531c">
+<img width="200" alt="image" src="https://github.com/user-attachments/assets/8af1a97d-e9a2-4ba2-bab3-ac489bea813f">
+<img width="200" alt="image" src="https://github.com/user-attachments/assets/fcac7b1b-5f73-40b1-a3ca-d110088a23be">
