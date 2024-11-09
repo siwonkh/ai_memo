@@ -1,17 +1,18 @@
-<h1 align="center">Team.SWG - Ai-Memo</h1>
+<h1 align="center">Team.SWG - Ai Memo</h1>
+<p align="center">
+  <img alt="svelte" src="https://img.shields.io/badge/Svelte-FF3E00?style=for-the-badge&logo=svelte&logoColor=white">
+  <img alt="typescript" src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white">
+</p>
 
 <p align="center">
   <img width="200" alt="image" src="https://github.com/user-attachments/assets/6bca11f0-c958-4eda-8deb-318d4f034d58">
 </p>
 <p align="center">
-  <img alt="svelte" src="https://img.shields.io/badge/Svelte-FF3E00?style=for-the-badge&logo=svelte&logoColor=white">
-  <img alt="typescript" src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white">
-  <img alt="tailwindcss" src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white">
-</p>
-<p align="center">
   <em>AI 접근성 향상을 통한 디지털 격차 완화</em>
 </p>
 
+<br/>
+이 프로젝트는 일상적으로 사용하는 메모장과 Todo 리스트에 AI 기능을 녹여내, 누구나 손쉽게 AI의 도움을 받을 수 있도록 만들었습니다. Todo 리스트의 AI는 할 일을 수행할 때 활용하면 유용할 기술이나 도구를 추천해 주어, 사용자가 다른 기술이나 도구 대한 정보를 쉽고 빠르게 얻을 수 있게 합니다. 메모장 AI는 맞춤법 검사와 글 형식 작성 등의 기능을 채팅 형태로 제공하여 글 작성 중 필요한 도움을 쉽게 받을 수 있습니다. 또한 결과는 대화로만 남는 것이 아닌 변경사항이 메모장에 자동으로 반영됨으로서 직접적이고 능동적인 도움을 줄 수 있습니다. 이 프로젝트는 AI 활용 장벽을 낮추고, 실질적인 생산성을 높이도록 하는 목표를 가지고 있습니다.
 <br/><br/>
 
 ## TODO 기능
